@@ -5,3 +5,6 @@ twitter_username: rnarayana
 github_username:  rnarayana
 
 theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
