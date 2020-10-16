@@ -62,8 +62,8 @@ author:
     - label: "GoodReads"
       icon: "fab fa-fw fa-goodreads"
       url: "https://www.goodreads.com/user/show/3333436-narayana"
-    - label: "PhotoBlog"
-      icon: "fad fa-fw fa-camera"
+    - label: "AM3"
+      icon: "fa fa-fw fa-camera"
       url: "https://rnarayana.aminus3.com/"
 
 footer:
@@ -77,8 +77,8 @@ footer:
     - label: "GoodReads"
       icon: "fab fa-fw fa-goodreads"
       url: "https://www.goodreads.com/user/show/3333436-narayana"
-    - label: "PhotoBlog"
-      icon: "fad fa-fw fa-camera"
+    - label: "AM3"
+      icon: "fa fa-fw fa-camera"
       url: "https://rnarayana.aminus3.com/"
       
 defaults:
