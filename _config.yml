@@ -49,9 +49,11 @@ plugins:
   - jekyll-remote-theme
 
 author:
-  name   : "Narayana Rengaswamy"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Programmer, fantasy and sci-fi lover. In awe of life, earth and space. Fan of Sachin Tendulkar, Richard Feynman, J K Rowling, Abdul Kalam,..."
+  name   : "Narayana R"
+  avatar : "/assets/images/profile.jpg"
+  bio    : >- 
+    Programmer, fantasy and sci-fi lover. In awe of life, earth and space. 
+    Fan of Sachin Tendulkar, Richard Feynman, J K Rowling, Abdul Kalam,...
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
