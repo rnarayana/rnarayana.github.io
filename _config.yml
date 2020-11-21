@@ -8,7 +8,7 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes@4.21.0
 
 # Outputting
 permalink: /:categories/:title/
@@ -40,20 +40,22 @@ include:
 #   - vendor/ruby/
 
 plugins:
+  - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-algolia
   - jekyll-remote-theme
 
 author:
   name   : "Narayana R"
   avatar : "/assets/images/profile.jpg"
   bio    : >- 
-    Programmer, fantasy and sci-fi lover. In awe of life, earth and space. 
-    Fan of Sachin Tendulkar, Richard Feynman, J K Rowling, Abdul Kalam,...
+    Software Engineer, fantasy and sci-fi lover.  
+    In awe of life, earth and space.  
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -61,12 +63,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/rnarayana"
-    - label: "GoodReads"
-      icon: "fab fa-fw fa-goodreads"
-      url: "https://www.goodreads.com/user/show/3333436-narayana"
-    - label: "AM3"
-      icon: "fa fa-fw fa-camera"
-      url: "https://rnarayana.aminus3.com/"
 
 footer:
   links:
