@@ -82,7 +82,7 @@ footer:
 comments:
   provider: "disqus"
   disqus:
-    shortname: "narayanar"
+    shortname: "rnarayana-github-io"
   
 analytics:
   provider: "google-gtag"
