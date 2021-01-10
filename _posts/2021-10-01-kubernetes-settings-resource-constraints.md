@@ -1,6 +1,6 @@
 ---
 title:  "Kubernetes: Setting Resource Constraints on Pods"
-date: 2021-01-07
+date: 2021-01-10
 categories:
   - blog
 tags:
