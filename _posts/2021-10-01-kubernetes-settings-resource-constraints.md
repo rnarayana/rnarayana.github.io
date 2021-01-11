@@ -15,8 +15,6 @@ Happy new year folks! Its finally 2021, and I wish you a healthy and safe year a
 
 I'm going to write about my experiments with tweaking resource constraints for an application that has been deployed in kubernetes. This post will help you find the right values for requests and limits for your pods in a large system. It assumes that you know what kubernetes is, and how pods and deployments work.
 
-Do let me know your thoughts in the comments section, and all feedback is welcome!
-
 ## Why resource constraints?
 
 When you have multiple services deployed in a k8s cluster (microservices or not), you will need to set the CPU and Memory resource values. You may have started off without specifying these, or given some random values like 500m and 500MiB, as these are optional fields. But eventually, before going to production, you need to find the right values. Let's see why, and how.
@@ -168,3 +166,7 @@ One very important aspect is to find the relation between CPU and Memory in thes
 ## Special cases
 
 In the application I'm working on, there are these special "engine" sevices, which are pure C# algorithms, complex stuff. Each request could run for minutes, have a high degree of multi-threadedness in them. Such special cases might need different strategies.
+
+
+
+Do let me know your thoughts in the comments section, and all feedback is welcome!
