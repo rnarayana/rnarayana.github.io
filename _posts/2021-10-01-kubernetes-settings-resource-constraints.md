@@ -69,7 +69,11 @@ Now that we have seen what resource contraints are and why we need to specify th
 
 When I had less number of application services, I used to manually find the resource constraints of each service by performing a load test on each of them. The process goes something like this:
 
-The first important thing is to have one service handle similar load only – does not really have to be a microservice, but it should not be a monolith either. You should be able to do simple math like, if one pod can handle 100 operations/second, 10 pods can handle 1000 operations/sec. Having different types of 'operations' makes it tricky.
+>**IMPORTANT**
+>
+>* Make sure one service handles similar kind of load only – does not really have to be a microservice, but it should not be a monolith either. You should be able to do simple math like, if one pod can handle 100 operations/second, 10 pods can handle 1000 operations/sec. Having different types of 'operations' makes it tricky.
+>
+>* Bottlenecks in individual services should be resolved before this test is performed, to get right numbers.
 
 1. **Load test one pod to find the point of breaking**
   Do not set any requests or limits on the pods. Do load testing on one particular pod/service (1 replica), and increase requests/sec gradually. Find the point at which the response grows exponentially, or the point at which the response time is more than your SLA. You will typically see that after a particular load, the response time jumps (or pod starts crashing)
