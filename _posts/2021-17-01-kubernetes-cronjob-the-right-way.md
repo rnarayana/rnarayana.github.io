@@ -70,7 +70,7 @@ import { v4 as uuidv4 } from "uuid";
         appInsights.defaultClient.context.tags[appInsights.defaultClient.context.keys.cloudRole] =  "LOCATION-PUBLISHER";
 
         appInsights.start();
-        AppInsights.appInsightConfig.defaultClient.context.tags["ai.operation.id"] = uuidv4();
+        appInsights.defaultClient.context.tags["ai.operation.id"] = uuidv4();
 
         // DO YOUR WORK
         // ...
