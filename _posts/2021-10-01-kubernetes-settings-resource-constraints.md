@@ -113,19 +113,23 @@ Setup:
   ```bash
   helm repo add fairwinds-stable https://charts.fairwinds.com/stable
   helm repo update
-  helm install vpa fairwinds-stable/vpa --namespace vpa --create-namespace
+  helm install vpa fairwinds-stable/vpa --namespace vpa --create-namespace --set recommender.extraArgs.prometheus-address=http://kube-prometheus-prometheus.monitoring.svc.cluster.local:9090 --set recommender.extraArgs.storage=prometheus
   helm install goldilocks fairwinds-stable/goldilocks --namespace goldilocks --create-namespace
   ```
 
-2. Mark the namespace you want VPA to monitor
+(Pick the address of prometheus based on your installation, generally it will be `http://<prometheus-service-name>.<prometheus-namespace>.svc.cluster.local:<port>`)
 
-```
+Note that without Prometheus, the VPA will not work properly - it will check the pods only once on startup - More details [here](https://github.com/kubernetes/autoscaler/issues/1551)
+
+1. Mark the namespace you want VPA to monitor
+
+```bash
 kubectl label ns loadtest-env-01 goldilocks.fairwinds.com/enabled=true`
 ```
 
-3. Visualize the recommendations after the load test here:
+1. Visualize the recommendations after the load test here:
 
-```
+```bash
 kubectl -n goldilocks port-forward svc/goldilocks-dashboard 8080:80`
 ```
 
