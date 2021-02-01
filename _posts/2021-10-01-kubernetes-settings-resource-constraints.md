@@ -69,14 +69,10 @@ Now that we have seen what resource contraints are and why we need to specify th
 
 When I had less number of application services, I used to manually find the resource constraints of each service by performing a load test on each of them. The process goes something like this:
 
->**IMPORTANT**
->
->* Make sure one service handles similar kind of load only – does not really have to be a microservice, but it should not be a monolith either. You should be able to do simple math like, if one pod can handle 100 operations/second, 10 pods can handle 1000 operations/sec. Having different types of 'operations' makes it tricky.
->
->* Bottlenecks in individual services should be resolved before this test is performed, to get right numbers.
-
 1. **Load test one pod to find the point of breaking**
   Do not set any requests or limits on the pods. Do load testing on one particular pod/service (1 replica), and increase requests/sec gradually. Find the point at which the response grows exponentially, or the point at which the response time is more than your SLA. You will typically see that after a particular load, the response time jumps (or pod starts crashing)
+
+> *Note*: Bottlenecks in individual services should be resolved before this test is performed, to get right numbers.
 
 2. **Find the resource values**
   Now we know the breaking point - something like _upto 250 requests/sec, the response time of each request is under 2 seconds_. We can proceed to find the CPU and memory at which this condition can be met.
@@ -91,6 +87,10 @@ When I had less number of application services, I used to manually find the reso
   Finally, do a load test which includes a ramp up, plateau, and a ramp down, to see if HPA works properly.
 
 The above manual way is adapted from [this blog post](https://opensource.com/article/18/12/optimizing-kubernetes-resource-allocation-production).
+
+---
+>* Make sure one service handles similar kind of load only – it does not really have to be a microservice, but it should not be a monolith either. You should be able to do simple math like, if one pod can handle 100 operations/second, 10 pods can handle 1000 operations/sec. Having different types of 'operations' makes it tricky.
+---
 
 ### VPA
 
@@ -142,6 +142,8 @@ Running the load tests:
   * In my example above, say for 10 replicas I got CPU required as 0.5 cores. Assume this is for a load test that generates 1000 req/sec. I would rerun the test with 15 replicas, so that the avg load on a pod reduces from 100reqs/sec to 67 req/sec. If this reduces my cpu requirement from 0.5 cores, I'll go with 15 replicas and not 10. Or repeat the test to get pod sizes that you want.
 * Tweaking number of replicas for this test is based on knowledge of your application and some assumptions about the most used services. The important point here is to be able to finish your load test without any failures by making sure there are enough pods available.
 
+---
+
 **Some points to note:**
 
 * When you run multiple iterations of tests, I used to redeploy the app into different namespaces each time to make sure the metrics are not skewed by previous runs. I'm not sure if there is a better way.
@@ -175,6 +177,6 @@ One very important aspect is to find the relation between CPU and Memory in thes
 
 In the application I'm working on, there are these special "engine" sevices, which are pure C# algorithms, complex stuff. Each request could run for minutes, have a high degree of multi-threadedness in them. Such special cases might need different strategies.
 
-
-
 Do let me know your thoughts in the comments section, and all feedback is welcome!
+
+---
