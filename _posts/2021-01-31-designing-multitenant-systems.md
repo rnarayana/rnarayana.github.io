@@ -11,7 +11,7 @@ tags:
 
 # Multi-Tenancy
 
-Hi there! In my current company, I have been working on a product that is used by multiple B2B customers. This is not your internet scale B2C application, but customized SaaS solutions for enterprises. It takes weeks and months to sign up a new customer, and involves proof of concepts, showcasing case studies, customization and new development. But the resulting customized application is not a stand alone solution for that customer, but is fed back into our own SaaS product. In this and the next few posts, I will go over the different aspects to consider when creating a multi-tenant system. I hope this post will breathe life into the title of this blog.
+Hi there! In my [current company](https://optym.com), I have been working on a product that is used by multiple B2B customers. This is not your internet scale B2C application, but customized SaaS solutions for enterprises. It takes weeks and months to sign up a new customer, and involves proof of concepts, showcasing case studies, customization and new development. But the resulting customized application is not a stand alone solution for that customer, but is fed back into our own SaaS product. In this and the next few posts, I will go over the different aspects to consider when creating a multi-tenant system. I hope this post will breathe life into the title of this blog.
 
 ---
 
