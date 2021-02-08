@@ -1,6 +1,7 @@
 title: Maybe, it depends.
 description: >- # this means to ignore newlines until "baseurl:"
-  Narayana Rengaswamy
+  Narayana Rengaswamy's technical blog.
+  Thoughts on software design, architecture, kubernetes, and so on.
 twitter_username: rnarayana
 github_username:  rnarayana
 minimal_mistakes_skin: mint
