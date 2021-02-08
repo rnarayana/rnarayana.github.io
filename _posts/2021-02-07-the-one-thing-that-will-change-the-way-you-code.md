@@ -15,6 +15,7 @@ Well, not really :) In software engineering, like any other discipline, there is
 This week, I'll quickly touch upon why organizing your software projects in a particular way will keep your code more modular.
 
 When you start with a new project, typically you start off with the code generators. Let's look at what Visual Studio gives you as a template.
+
 ![ProjStructure0](/assets/images/VS-NewProj.jpg)
 
 Notice the `Controllers` folder with `WeatherForecastController.cs` in it, and a `WeatherForecast.cs`, the domain model class, outside of it. If you start off this way, and keep extending by adding your own controllers and models, you will end up with code that looks like this:
